@@ -1,5 +1,5 @@
 /* Use modernizr to see if there is js available */
-.js-willow-tree ul {
+.js-willow-tree.collapsed ul {
   display: none;
 }
 
