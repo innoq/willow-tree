@@ -1,3 +1,3 @@
-Take a look into the [Documentation](http://github.com/innoq/willow-tree) for usage instructions.
+Take a look into the [Documentation](http://innoq.github.io/willow-tree/) for usage instructions.
 
 
