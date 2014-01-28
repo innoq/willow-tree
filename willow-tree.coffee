@@ -21,6 +21,7 @@
       $subList = $parentListElement.children('ul')
 
       $subList.toggle()
+      $target.toggleClass("toggled")
 
   $.fn.willowTree = WillowTree.init
 

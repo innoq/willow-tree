@@ -55,6 +55,18 @@
     ok($subList3.is(':hidden'), "SubList 3 is hidden")
 
 
+  test "Toggling a hidden list, should mark the toggled button", ->
+    [$fixture, _] = setup()
+    $fixture.willowTree()
+
+    [_, $toggle1] = subListAndToggle(1)
+
+    ok(!$toggle1.hasClass('toggled'), "Toggle button is not toggled yet")
+    $toggle1.click()
+    ok($toggle1.hasClass('toggled'), "Toggle button is toggled yet")
+
+
+
 
 
 )(jQuery)

@@ -32,7 +32,8 @@
         $target = $(target);
         $parentListElement = $target.parent('li');
         $subList = $parentListElement.children('ul');
-        return $subList.toggle();
+        $subList.toggle();
+        return $target.toggleClass("toggled");
       };
 
       return WillowLeaf;

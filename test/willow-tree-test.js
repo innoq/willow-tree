@@ -37,7 +37,7 @@
       $toggle1.click();
       return ok(!$subList1.is(':hidden'), "SubList 1 is visible");
     });
-    return test("Toggling a hidden list, should only make the direct child list visible", function() {
+    test("Toggling a hidden list, should only make the direct child list visible", function() {
       var $fixture, $subList1, $subList3, $toggle1, $toggle3, _, _ref, _ref1, _ref2;
       _ref = setup(), $fixture = _ref[0], _ = _ref[1];
       $fixture.willowTree();
@@ -47,6 +47,15 @@
       $toggle1.click();
       ok(!$subList1.is(':hidden'), "SubList 1 is visible");
       return ok($subList3.is(':hidden'), "SubList 3 is hidden");
+    });
+    return test("Toggling a hidden list, should mark the toggled button", function() {
+      var $fixture, $toggle1, _, _ref, _ref1;
+      _ref = setup(), $fixture = _ref[0], _ = _ref[1];
+      $fixture.willowTree();
+      _ref1 = subListAndToggle(1), _ = _ref1[0], $toggle1 = _ref1[1];
+      ok(!$toggle1.hasClass('toggled'), "Toggle button is not toggled yet");
+      $toggle1.click();
+      return ok($toggle1.hasClass('toggled'), "Toggle button is toggled yet");
     });
   })(jQuery);
 
