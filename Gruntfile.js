@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'public/javascripts/willow-tree.js': 'willow-tree.coffee'
+          'willow-tree.js': 'willow-tree.coffee'
         }
       },
 
@@ -19,13 +19,11 @@ module.exports = function(grunt) {
 
     watch: {
       coffeescript: {
-        // Which files to watch (all .less files recursively in the less directory)
-        files: ['willow-tree.coffee'],
+        files: ['willow-tree.coffee', 'test/**/*.coffee'],
         tasks: ['coffee']
       },
 
       test: {
-        // Which files to watch (all .less files recursively in the less directory)
         files: ['willow-tree.coffee'],
         tasks: ['coffee']
       },
@@ -35,14 +33,13 @@ module.exports = function(grunt) {
       }
     },
     qunit: {
-      all: ['test/javascripts/**/*.html']
+      all: ['test/**/*.html']
     }
   });
  
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-qunit');
 
-  grunt.registerTask('default', ['less', 'coffee']);
+  grunt.registerTask('default', ['coffee', 'qunit']);
 };

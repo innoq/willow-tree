@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Example</title>
+  <link rel="stylesheet" href="./vendor/qunit-1.13.0.css">
+  <link rel="stylesheet" href="../willow-tree.css">
+</head>
+<body>
+  <div id="qunit"></div>
+
+  <div id="qunit-fixture">
+    <ul class="js-willow-tree">
+      <li>
+        <button class="js-willow-tree-toggle js-test-toggle-1"></button>
+        Layer 1
+        <ul class="js-test-list-1">
+          <li>
+            <button class="js-willow-tree-toggle js-test-toggle-3"></button>
+            Layer 1.1
+            <ul class="js-test-list-3">
+              <li>Layer 1.1</li>
+              <li>Layer 1.2</li>
+              <li>Layer 1.3</li>
+            </ul>
+          </li>
+          <li>Layer 1.2</li>
+          <li>Layer 1.3</li>
+        </ul>
+      </li>
+      <li>
+        <button class="js-willow-tree-toggle js-test-toggle-2"></button>
+        Layer 2
+        <ul class="js-test-list-2">
+          <li>Layer 1.1</li>
+          <li>Layer 1.2</li>
+          <li>Layer 1.3</li>
+        </ul>
+      </li>
+      <li>Layer 3</li>
+    </ul>
+  </div>
+
+  <script src="./vendor/qunit-1.13.0.js"></script>
+  <script src="./vendor/jquery-1.11.0.js"></script>
+  <script src="../willow-tree.js"></script>
+  <script src="./willow-tree-test.js"></script>
+</body>
+</html>
