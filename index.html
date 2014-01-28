@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" href="stylesheets/styles.css">
   <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <link rel="stylesheet" href="willow-tree.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,7 +16,7 @@
 <body>
 <div class="wrapper">
   <header>
-    <h1>Willow-tree</h1>
+    <h1>willow-tree.js</h1>
 
     <p>jquery tree view library that enables injected trees without re-initializing the library</p>
 
@@ -31,9 +32,7 @@
     </ul>
   </header>
   <section>
-    <h3>
-      <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span
-        class="octicon octicon-link"></span></a>willow-tree.js</h3>
+    <h2>About</h2>
 
     <p>The willow-tree.js plugin is implemented similar to many other tree libraries made for jQuery, except, that it
       does not initialize any additional markup itself. Instead it assumes that you provide the necessary markup
@@ -45,7 +44,121 @@
       the tree library again.</p>
 
 
+    <h2>Usage</h2>
+    <h4>JS Initialization</h4>
+<pre>
+<code>
+  (function ($) {
 
+    $(document).willowTree();
+
+  })(jQuery);
+</code>
+</pre>
+
+<h4>HTML Markup</h4>
+<pre>
+<code>
+  &lt;ul class="js-willow-tree"&gt;
+    &lt;li&gt;
+      &lt;button class="js-willow-tree-toggle"&gt;&lt;/button&gt;
+      Layer 1
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;button class="js-willow-tree-toggle"&gt;&lt;/button&gt;
+          Layer 1.1
+          &lt;ul class="js-test-list-3"&gt;
+            &lt;li&gt;Layer 1.1&lt;/li&gt;
+            &lt;li&gt;Layer 1.2&lt;/li&gt;
+            &lt;li&gt;Layer 1.3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Layer 1.2&lt;/li&gt;
+        &lt;li&gt;Layer 1.3&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;button class="js-willow-tree-toggle"&gt;&lt;/button&gt;
+      Layer 2
+      &lt;ul&gt;
+        &lt;li&gt;Layer 1.1&lt;/li&gt;
+        &lt;li&gt;Layer 1.2&lt;/li&gt;
+        &lt;li&gt;Layer 1.3&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Layer 3&lt;/li&gt;
+  &lt;/ul&gt;
+</code>
+</pre>
+
+    <h2>Demo</h2>
+
+    <h3>Collapsed:</h3>
+
+    <ul class="js-willow-tree collapsed">
+      <li>
+        <button class="js-willow-tree-toggle"></button>
+        Layer 1
+        <ul>
+          <li>
+            <button class="js-willow-tree-toggle"></button>
+            Layer 1.1
+            <ul class="js-test-list-3">
+              <li>Layer 1.1</li>
+              <li>Layer 1.2</li>
+              <li>Layer 1.3</li>
+            </ul>
+          </li>
+          <li>Layer 1.2</li>
+          <li>Layer 1.3</li>
+        </ul>
+      </li>
+      <li>
+        <button class="js-willow-tree-toggle"></button>
+        Layer 2
+        <ul>
+          <li>Layer 1.1</li>
+          <li>Layer 1.2</li>
+          <li>Layer 1.3</li>
+        </ul>
+      </li>
+      <li>Layer 3</li>
+    </ul>
+
+    <h3>Expanded:</h3>
+
+    <ul class="js-willow-tree">
+      <li>
+        <button class="js-willow-tree-toggle"></button>
+        Layer 1
+        <ul>
+          <li>
+            <button class="js-willow-tree-toggle"></button>
+            Layer 1.1
+            <ul class="js-test-list-3">
+              <li>Layer 1.1</li>
+              <li>Layer 1.2</li>
+              <li>Layer 1.3</li>
+            </ul>
+          </li>
+          <li>Layer 1.2</li>
+          <li>Layer 1.3</li>
+        </ul>
+      </li>
+      <li>
+        <button class="js-willow-tree-toggle"></button>
+        Layer 2
+        <ul>
+          <li>Layer 1.1</li>
+          <li>Layer 1.2</li>
+          <li>Layer 1.3</li>
+        </ul>
+      </li>
+      <li>Layer 3</li>
+    </ul>
+
+    <h3>Tests</h3>
+    Tests are done via QUnit and can be found <a href="test/willow-tree-test.html">here</a>
   </section>
   <footer>
     <p>This project is maintained by <a href="https://github.com/innoq">innoq</a></p>
@@ -56,6 +169,14 @@
   </footer>
 </div>
 <script src="javascripts/scale.fix.js"></script>
+<script src="extlib/jquery.js"></script>
+<script src="./willow-tree.js"></script>
+<script>
+  (function ($) {
 
+    $(document).willowTree();
+
+  })(jQuery);
+</script>
 </body>
 </html>
