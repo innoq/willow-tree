@@ -2,3 +2,4 @@ node_modules/*
 extlib/*
 test/extlib/*
 .idea/*
+dist/*
